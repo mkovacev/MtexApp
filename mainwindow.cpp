@@ -21,8 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-    //database_.close();
-    //writeIntoDatabaseFile();
+
 }
 
 void MainWindow::readFromDatabaseFile()
@@ -56,8 +55,6 @@ void MainWindow::readFromDatabaseFile()
                 {
                     date = firmState.attribute("Date", "01.01.1000");
                     money = firmState.text().toInt();
-//                    std::cout << date.toStdString() <<std::endl;
-//                    std::cout << money <<std::endl;
                     pomFirm.putInIncomeMap(QDate::fromString(date, "dd.MM.yyyy"), money);
 
                 }else if(firmState.tagName() == "Payed")
@@ -66,57 +63,15 @@ void MainWindow::readFromDatabaseFile()
                     money = firmState.text().toInt();
                     pomFirm.putInPaidMap(QDate::fromString(date, "dd.MM.yyyy"), money);
                 }
-//                std::cout << "Next state" << std::endl;
                 firmState = firmState.nextSibling().toElement();
-//                std::cout << firmState.tagName().toStdString() <<std::endl;
             }
             firmsVector.append(pomFirm);
 
-//            std::cout << "Next firm" <<std::endl;
             component = component.nextSibling().toElement();
         }
 
         database_.close();
     }
-}
-
-void MainWindow::writeIntoDatabaseFile()
-{
-//    if(!database_.open(QIODevice::Text | QIODevice::ReadWrite | QIODevice::Truncate))
-//    {
-//        std::cerr << "Unable to create empty file baza.txt\n =>" << strerror(errno) << "\n" << std::endl;
-//        exit(1);
-//    }else{
-//        database_.open(QIODevice::Text | QIODevice::ReadWrite | QIODevice::Truncate);
-//        QTextStream out(&database_);
-
-//        QDomDocument document;
-//        QDomElement root = document.createElement("Firms");
-
-//        document.appendChild(root);
-
-//        for(int i = 0; i < 5; i++)
-//        {
-
-//            root.appendChild(firm);
-//        }
-
-//        for(auto f : firmsVector){
-//            QString firmName = f.getFirmName();
-//            QDomElement firm = document.createElement("Firm");
-//            firm.setAttribute("Name", firmName);
-//            QMap<QDate, int>::iterator incomeMapIterator;
-//            for (incomeMapIterator = f.getIncomeMap().begin(); incomeMapIterator != f.getIncomeMap().end(); incomeMapIterator++) {
-//                QDate date = incomeMapIterator.key();
-//                int money = incomeMapIterator.value();
-
-
-//            }
-//            out << firm;
-//            out << "\n";
-//        }
-//        database_.close();
-//    }
 }
 
 void MainWindow::onPushedAddFirm()
@@ -141,21 +96,6 @@ void MainWindow::onPushedAddPayed()
     {
         ui->listWidgetIncome->addItem(i.getFirmName());
     }
-
-
-
-//    QFile file("C:\\Users\\matij\\OneDrive\\Documents\\mtexApp\\firme.xml");
-//    if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
-//    {
-//        std::cout << "Open the file for writing failed";
-//    }
-//    else
-//    {
-//        QTextStream stream(&file);
-//        stream << document_.toString();
-//        file.close();
-//        std::cout << "Writing is done";
-//    }
 }
 
 void MainWindow::onPushedAddFirmToDB()

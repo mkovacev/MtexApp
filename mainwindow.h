@@ -25,7 +25,6 @@ public:
     ~MainWindow();
 
     void readFromDatabaseFile();
-    void writeIntoDatabaseFile();
 
 public slots:
     void onPushedAddFirm();
@@ -38,7 +37,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    QString fileName = "C:\\Users\\matij\\OneDrive\\Documents\\mtexApp\\firme.xml";
+    QString fileName = "C:\\Users\\matij\\OneDrive\\Documents\\GitHub\\MtexApp\\firme.xml";
     QFile database_;
     QDomDocument document_;
 
