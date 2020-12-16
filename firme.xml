@@ -1,10 +1,24 @@
 <Firms>
  <Firm Name="Vrtic Cajetina">
   <Income Date="01.01.1010">202020</Income>
+  <Payed Date="16.12.2020">123</Payed>
  </Firm>
  <Firm Name="Zdravstveni centar Priboj">
   <Income Date="02.02.2020">101010</Income>
-  <Payed Date="03.03.3030">303030</Payed>
+  <Payed Date="03.03.3030">29531.5</Payed>
   <Income Date="10.03.2020">123</Income>
+  <Income Date="16.12.2020">130000.3</Income>
+ </Firm>
+ <Firm Name="Dom zdravlja Uzice">
+  <Income Date="16.12.2020">16000</Income>
+  <Income Date="16.12.2020">123</Income>
+  <Payed Date="16.12.2020">123</Payed>
+  <Income Date="16.12.2020">123</Income>
+  <Income Date="16.12.2020">456</Income>
+  <Income Date="16.12.2020">123.123</Income>
+ </Firm>
+ <Firm Name="Vrtic Uzice">
+  <Income Date="16.12.2020">20000</Income>
+  <Payed Date="16.12.2020">10000</Payed>
  </Firm>
 </Firms>

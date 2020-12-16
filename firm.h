@@ -3,28 +3,34 @@
 #include <QVector>
 #include <QMap>
 #include <QDate>
+#include <ostream>
+
+using namespace std;
 
 class Firm
 {
 public:
     Firm(const QString& firmName);
 
-    void putInIncomeMap(QDate date, int incomeValue);
-    void putInPaidMap(QDate date, int paidValue);
+    void putInIncomeMap(QDate date, float incomeValue);
+    void putInPaidMap(QDate date, float paidValue);
 
-    int findIncomeByDate(QDate date) const;
-    int findPaidByDate(QDate date) const;
+    float findIncomeByDate(QDate date) const;
+    float findPaidByDate(QDate date) const;
 
-    QMap<QDate, int> getIncomeMap() const;
-    QMap<QDate, int> getPaidMap() const;
+    QMap<QDate, float> getIncomeMap() const;
+    QMap<QDate, float> getPaidMap() const;
     QString getFirmName() const;
     void setFirmName(const QString& newFirmName);
 
+    float calculateDifference() const;
+
+    friend ostream& operator<<(ostream& stream, const Firm& firm);
 
 private:
     QString firmName;
-    QMap<QDate, int> incomeMap;
-    QMap<QDate, int> paidMap;
+    QMap<QDate, float> incomeMap;
+    QMap<QDate, float> paidMap;
 };
 
 #endif // FIRM_H

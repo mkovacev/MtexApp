@@ -24,7 +24,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="page_1">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -46,6 +46,13 @@
          <widget class="QPushButton" name="addPayedButton">
           <property name="text">
            <string>Dodaj placanja</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="overviewButton">
+          <property name="text">
+           <string>Pregled</string>
           </property>
          </widget>
         </item>
@@ -83,6 +90,13 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="backButtonPage2">
+          <property name="text">
+           <string>Nazad</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_3">
@@ -114,6 +128,13 @@
          <widget class="QPushButton" name="importIncomeButton">
           <property name="text">
            <string>Unesi prihod u bazu</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="backButtonPage3">
+          <property name="text">
+           <string>Nazad</string>
           </property>
          </widget>
         </item>
@@ -151,6 +172,94 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="backButtonPage4">
+          <property name="text">
+           <string>Nazad</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_5">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Firme</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="overviewListFirms"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Pazareno</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QListWidget" name="overviewListIncome"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Placeno</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QListWidget" name="overviewListPayed"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Razlika:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="diffLineEdit"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="showFirmOverviewButton">
+          <property name="text">
+           <string>Prikazi</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="backButtonPage5">
+          <property name="text">
+           <string>Nazad</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
      </widget>
@@ -163,7 +272,7 @@
      <x>0</x>
      <y>0</y>
      <width>639</width>
-     <height>20</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
